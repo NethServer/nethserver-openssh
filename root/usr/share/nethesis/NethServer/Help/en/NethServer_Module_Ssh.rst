@@ -14,3 +14,6 @@ Allow password authentication
     Allows access through SSH with simple password authentication.
     If not enabled, users will be able to authenticate
     only using public key authentication.
+
+Allow access only from trusted networks
+    If only enabled, restricts access to the resource only to trusted networks.

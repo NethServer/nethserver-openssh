@@ -42,6 +42,7 @@ class Ssh extends \Nethgui\Controller\AbstractController
         $this->declareParameter('rootLogin', Validate::BOOLEAN, array('configuration', 'sshd', 'PermitRootLogin'));
         $this->declareParameter('port', Validate::PORTNUMBER, array('configuration', 'sshd', 'TCPPort'));
         $this->declareParameter('status', Validate::SERVICESTATUS, array('configuration', 'sshd', 'status'));
+        $this->declareParameter('access', $this->createValidator()->memberOf('private','public'), array('configuration', 'sshd', 'access'));
     }
 
     protected function onParametersSaved($changedParameters)
