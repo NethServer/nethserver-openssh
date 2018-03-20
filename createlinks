@@ -62,3 +62,15 @@ event_actions('nethserver-openssh-save', qw(
 event_actions('migration-import', qw(
    nethserver-openssh-migrate 40
 ));
+
+#
+# tls-policy-save event
+#
+
+event_templates('tls-policy-save', qw (
+    /etc/ssh/sshd_config
+));
+
+event_services('tls-policy-save', qw(
+    sshd reload
+));
