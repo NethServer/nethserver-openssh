@@ -16,6 +16,7 @@
         my $matchGroup = join (",",@SftpRestricted);
         $OUT .= "Match Group \"$matchGroup\"\n";
         $OUT .= "    ForceCommand internal-sftp\n";
+        $OUT .= "    DisableForwarding\n";
         $OUT .= "Match All\n";
     } else {
         $OUT .= "# We have no groups restricted to sftp";
