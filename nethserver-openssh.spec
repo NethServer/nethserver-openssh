@@ -9,6 +9,7 @@ URL: %{url_prefix}/%{name}
 BuildRequires: nethserver-devtools
 Requires: openssh-server
 Requires: nethserver-base
+Requires: pam_oath
 
 %description
 Configure and manage the sshd daemon

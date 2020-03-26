@@ -30,6 +30,7 @@ use esmith::Build::CreateLinks qw(:all);
 event_templates('nethserver-openssh-update', qw(
     /etc/ssh/sshd_config
     /etc/pam.d/sshd
+    /etc/nethserver/sshd.otp.force
 ));
 
 event_actions('nethserver-openssh-update', qw(
