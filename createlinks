@@ -82,3 +82,8 @@ event_services('nethserver-sssd-save', qw(
 event_templates('otp-save', qw(
     /etc/nethserver/sshd.otp.force
 ));
+
+# Expand all files related to restore OTP
+event_templates('post-restore-data', qw(
+    /etc/nethserver/sshd.otp.force
+));
