@@ -26,7 +26,7 @@
     }
 
     # We list non restricted group to SFTP
-    my $match_group_exp = join(",", 'root', @SftpUnRestricted);
+    my $match_group_exp = join(",", 'root', ($sshd{'AllowLocalGroups'} || ()), @SftpUnRestricted);
     $OUT .= qq(Match Group "$match_group_exp"\n);
     $OUT .= "    ForceCommand none\n";
     $OUT .= "    AllowTCPForwarding yes\n";

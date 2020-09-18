@@ -23,6 +23,7 @@ the props of the service to configure openssh:
 
  sshd=service
     AllowGroups=group1,group2:sftp,group3
+    AllowLocalGroups=wheel,adm
     LoginGraceTime=2m
     MaxAuthTries=6
     PasswordAuthentication=yes
@@ -34,10 +35,10 @@ the props of the service to configure openssh:
     access=green,red
     status=enabled
 
-
-The prop ``AllowGroups`` is used by the service only if the property ``$sssd{'ShellOverrideStatus'}`` is enabled.
-
-- ``AllowGroups``: a comma separated list of group allowed to connect to the sshd service, if the option ``:sftp`` is specified then the group is restricted to SFTP
+- ``AllowGroups``: a comma separated list of groups from the accounts provider, allowed to connect with SSH.
+  If the option ``:sftp`` is specified then the group is restricted to SFTP.
+  This prop is considered if the property ``$sssd{'ShellOverrideStatus'}`` is enabled.
+- ``AllowLocalGroups``: a comma separated list of group names in ``/etc/groups`` that are granted full SSH and SFTP access.
 - ``SubsystemSftp``: (yes|no) enable the sftp service
 - ``LoginGraceTime``: The time after which the server disconnects if the user has not successfully logged in.
 - ``MaxAuthTries``: Specifies the maximum number of authentication attempts permitted per connection. 

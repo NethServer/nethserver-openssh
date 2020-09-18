@@ -22,7 +22,7 @@
     my $PermitRootLogin = $sshd{'PermitRootLogin'} || "no";
     my $admin = $admins{'group'} || 'domain admins';
 
-    my @AllowGroups = ();
+    my @AllowGroups = $sshd{'AllowLocalGroups'} ? (split(',', $sshd{'AllowLocalGroups'})) : ();
     foreach ( $admin, split(',',$sshd{'AllowGroups'} || '')) {
         my ($group, $sftp) = split(':', $_);
 
