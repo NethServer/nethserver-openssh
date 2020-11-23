@@ -34,6 +34,7 @@ the props of the service to configure openssh:
     UsePAM=yes
     access=green,red
     status=enabled
+    StrongEncryption=enabled
 
 - ``AllowGroups``: a comma separated list of groups from the accounts provider, allowed to connect with SSH.
   If the option ``:sftp`` is specified then the group is restricted to SFTP.
@@ -49,6 +50,7 @@ the props of the service to configure openssh:
 - ``UsePAM``: (yes,no) Pam can be used to authentify user
 - ``access``: Allow ssh connection to your firewall following different zones.
 - ``status``: (enabled,disabled) Enable or disable the sshd service
+- ``StrongEncryption``: (enabled,disabled) Enable or disable the strong encryption by requiring strong ciphers, HostKeyAlgorithms, KexAlgorithms, MACs. Old clients might not be able to connect to the server once enabled.
 
 Events
 ======
